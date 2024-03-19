@@ -63,7 +63,7 @@ studentsList.push(francescaDaPolenta);
 const upperCaseNames = studentsList.map((element)=>{
     return {
         ID: element.ID,
-        nome: element.Nome.toUpperCase(),
+        Nome: element.Nome.toUpperCase(),
         Voti: element.Voti,
     }
 })
