@@ -18,7 +18,7 @@ const tavoloVip = [
 const  listaCorretta = []; //Array.
 
 //Ciclo per assegnare i nomi agli oggetti.
-tavoloVip.forEach((element, i, array) => {
+tavoloVip.forEach((element, i) => {
     //Assegnazione dei nomi ad una variabile.
     let currentName = element;// String
     //Assegnazione del posto a sedere.
@@ -40,9 +40,14 @@ console.log(listaCorretta)
 
 //ESERCIZIO 2
 
-//Array contenente tutti gli studenti.
+//Array contenente i profili degli studenti.
 const studentsList = [];//Array
-console.log(studentsList)
+//Array contente i nomi in maiuscolo degli studenti.
+const upperCaseNames = [];//Array
+//Array contenente gli studenti con totale voti maggiore di 70.
+const highGradesList = [];//Array
+//Array contente gli studenti che hanno anche un ID maggiore di 120.
+const highGradesAndIdList = [];//Array
 
 //Creazione dei profili degli studenti i quali verranno poi inseriti tramite push nella lista.
 const marcoDellaRovere = studentProfile(213, 'Marco della Rovere', 78);//Object.
@@ -62,7 +67,18 @@ studentsList.push(francescaDaPolenta);
 
 //Bisogna creare tre liste: una con i nomi di tutti in maiuscolo, una con gli studenti con un totale dei voti superiore al 70, una con quelli che oltre ad avete un totale dei voti superiore al 70 abbianco anche l`ID superiore a 120.
 //Creazione ciclo
-student
+studentsList.forEach((element)=>{
+    upperCaseNames.push(element.Nome.toUpperCase())
+    if(element.ID > 120 && element.Voti > 70){
+            highGradesList.push(element.Nome);
+            highGradesAndIdList.push(element.Nome);
+
+    } else if(element.Voti > 70){
+        highGradesList.push(element.Nome);
+    }
+});
+
+console.log(upperCaseNames, highGradesList, highGradesAndIdList);
 
 //Funzione da utilizzare per creare gli oggetti contenenti i dati degli studenti.
 function studentProfile(studentId, studentName, studentGrade){
