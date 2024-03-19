@@ -42,8 +42,6 @@ console.log(listaCorretta)
 
 //Array contenente i profili degli studenti.
 const studentsList = [];//Array
-//Array contente i nomi in maiuscolo degli studenti.
-const upperCaseNames = [];//Array
 
 //Creazione dei profili degli studenti i quali verranno poi inseriti tramite push nella lista.
 const marcoDellaRovere = studentProfile(213, 'Marco della Rovere', 78);//Object.
@@ -62,14 +60,15 @@ const francescaDaPolenta = studentProfile(120, 'Francesca da Polenta', 84);//Obj
 studentsList.push(francescaDaPolenta);
 
 //Bisogna creare tre liste: una con i nomi di tutti in maiuscolo, una con gli studenti con un totale dei voti superiore al 70, una con quelli che oltre ad avete un totale dei voti superiore al 70 abbianco anche l`ID superiore a 120.
-//Creazione ciclo
-studentsList.forEach((element)=>{
-    upperCaseNames.push(element.Nome.toUpperCase())
-
-});
-
-const highGradesList = studentsList.filter((element) => element.Voti > 70);
-const highGradesAndIdList = studentsList.filter((element) => element.Voti > 70 && element.ID > 120);
+const upperCaseNames = studentsList.map((element)=>{
+    return {
+        ID: element.ID,
+        nome: element.Nome.toUpperCase(),
+        Voti: element.Voti,
+    }
+})
+const highGradesList = upperCaseNames.filter((element) => element.Voti > 70);
+const highGradesAndIdList = upperCaseNames.filter((element) => element.Voti > 70 && element.ID > 120);
 console.log(upperCaseNames, highGradesList, highGradesAndIdList);
 
 //Funzione da utilizzare per creare gli oggetti contenenti i dati degli studenti.
