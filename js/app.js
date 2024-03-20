@@ -70,3 +70,54 @@ function studentProfile(studentId, studentName, studentGrade){
     };
     return student; //Object.
 }
+
+//ESERCIZIO 4
+
+//Creazione array con squadre di calcio.
+
+const calabroLeague = [
+    {
+        team: 'US Catanzaro',
+        points: 0,
+        fouls: 0,
+    },
+    {
+        team: 'Cosenza Calcio',
+        points: 0,
+        fouls: 0,
+    },
+    {
+        team: 'FC Crotone',
+        points: 0,
+        fouls: 0,
+    },
+    {
+        team: 'Reggina 1914',
+        points: 0,
+        fouls: 0,
+    },
+    {
+        team: 'US Vibonese Calcio',
+        points: 0,
+        fouls: 0,
+    }
+];//Array.
+
+//Attribuzione di punti e falli alle squadre.
+//Ciclare l'array e attribuire il valore della funzione randomNumber a punti e falli dopo le 8 partite del torneo.
+calabroLeague.forEach((element)=>{
+    //  Una squadra che ha perso tutte le partite avrà fatto 0 punti, una che le ha vinte tutte 24 (Il calcolo dei punti, essendo totalmente casuale, darà molto probabilmente risultati irreali).
+    element.points = randomNumber(0, 24);//Number
+    //Si ipotizza che una squadra faccia in media tra i 10 e i 15 falli a partita.
+    element.fouls = randomNumber(80, 120);//Number
+
+});//Object
+console.log(calabroLeague)
+
+
+
+//Funzione per generare un numero casuale.
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }; //Number
+
