@@ -79,27 +79,27 @@ const calabroLeague = [
     {
         team: 'US Catanzaro',
         points: 0,
-        fouls: 0,
+        drawnFouls: 0,
     },
     {
         team: 'Cosenza Calcio',
         points: 0,
-        fouls: 0,
+        drawnFouls: 0,
     },
     {
         team: 'FC Crotone',
         points: 0,
-        fouls: 0,
+        drawnFouls: 0,
     },
     {
         team: 'Reggina 1914',
         points: 0,
-        fouls: 0,
+        drawnFouls: 0,
     },
     {
         team: 'US Vibonese Calcio',
         points: 0,
-        fouls: 0,
+        drawnFouls: 0,
     }
 ];//Array.
 
@@ -109,12 +109,25 @@ calabroLeague.forEach((element)=>{
     //  Una squadra che ha perso tutte le partite avrà fatto 0 punti, una che le ha vinte tutte 24 (Il calcolo dei punti, essendo totalmente casuale, darà molto probabilmente risultati irreali).
     element.points = randomNumber(0, 24);//Number
     //Si ipotizza che una squadra faccia in media tra i 10 e i 15 falli a partita.
-    element.fouls = randomNumber(80, 120);//Number
+    element.drawnFoulsouls = randomNumber(80, 120);//Number
 
 });//Object
 console.log(calabroLeague)
 
-
+//Creazione array con soli nomi delle squadre e falli.
+//Usare la destrutturazione per isolare le proprietà che ci servono.
+const {
+    team,
+    drawnFouls
+} = calabroLeague
+//Creazione di un nuovo array.
+const teamsDrawnFouls = calabroLeague.map((element)=>{
+    return {
+        team: team,
+        drawnFouls: drawnFouls
+    }
+});//Array
+console.log(teamsDrawnFouls)
 
 //Funzione per generare un numero casuale.
 function randomNumber(min, max) {
