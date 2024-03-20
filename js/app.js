@@ -71,6 +71,35 @@ function studentProfile(studentId, studentName, studentGrade){
     return student; //Object.
 }
 
+
+//ESERCIZIO 3
+
+//Creazione array biciclette.
+
+const bikes = [
+    {
+        name:'Bianchi',
+        weightKg: 10
+    },
+    {
+        name:'Atala',
+        weightKg: 7
+    },
+    {
+        name:'Colnago',
+        weightKg: 8
+    },
+    {
+        name:'Merida',
+        weightKg: 5
+    },
+    {
+        name:'Trek',
+        weightKg: 6
+    },
+];//Array.
+
+
 //ESERCIZIO 4
 
 //Creazione array con squadre di calcio.
@@ -112,14 +141,14 @@ calabroLeague.forEach((element)=>{
     element.drawnFouls = randomNumber(80, 120);//Number
 
 });//Object
-console.log(calabroLeague)
+console.log(calabroLeague);
 
 //Creazione array con soli nomi delle squadre e falli.
 //Usare la destrutturazione per isolare le proprietà che ci servono.
 const {
     team,
     drawnFouls
-} = calabroLeague
+} = calabroLeague;
 //Creazione di un nuovo array.
 const teamsDrawnFouls = calabroLeague.map((element)=>{
     return {
@@ -127,7 +156,7 @@ const teamsDrawnFouls = calabroLeague.map((element)=>{
         drawnFouls: drawnFouls
     }
 });//Array
-console.log(teamsDrawnFouls)
+console.log(teamsDrawnFouls);
 
 //Funzione per generare un numero casuale.
 function randomNumber(min, max) {
